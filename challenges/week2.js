@@ -1,11 +1,19 @@
 function getFillings(sandwich) {
   if (sandwich === undefined) throw new Error("ingredients is required");
   // Your code here!
-}
+  const fill = sandwich.fillings
+  return fill
+  //console.log(sandwich.fillings);
+  }
 
 function isFromManchester(person) {
   if (person === undefined) throw new Error("person is required");
   // Your code here!
+  if (person.city === "Manchester"){
+    return true
+  } else {
+    return false
+  }
 }
 
 function getBusNumbers(people) {
