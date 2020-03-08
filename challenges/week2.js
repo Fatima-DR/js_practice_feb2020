@@ -16,7 +16,10 @@ function isFromManchester(person) {
 
 function getBusNumbers(people) {
   if (people === undefined) throw new Error("people is required");
-  // Your code here!
+  const oneBus = 40
+  const busNumbers = Math.ceil(people / oneBus)
+  return busNumbers
+  
 }
 
 function countSheep(arr) {
@@ -32,18 +35,13 @@ function countSheep(arr) {
 
 function hasMPostCode(person) {
   if (person === undefined) throw new Error("person is required");
-  // Your code here!
   let pc = person.address.postCode;
-  console.log(pc);
-  //if (pc.startsWith('M', 0){
-  if (pc.charAt(0) === 'M') {
-    return true
-  } else if (pc.charAt(1) === 0)  {
-    return true
-  } else {
-    return false
-  }
-} 
+  let city = person.address.city;
+  if (pc.charAt(0) === 'M' && city === 'Manchester') {
+    return true;
+  } return false;
+}
+
 
 module.exports = {
   getFillings,

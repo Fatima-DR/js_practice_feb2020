@@ -1,6 +1,6 @@
 function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
-  // return word.charAt(0).toUpperCase() + word.slice(1);
+  return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
 
@@ -8,57 +8,63 @@ function capitalize(word) {
 function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
-  // const firstChar = firstName.charAt(0).toUpperCase();
-  // const secondChar = lastName.charAt(0).toUpperCase();
-  // return firstChar + "." + secondChar
+  const firstChar = firstName.charAt(0).toUpperCase();
+  const secondChar = lastName.charAt(0).toUpperCase();
+  return firstChar + "." + secondChar
 }
 
 
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
-  // Add your code here!
-  // if (vatRate === 0) {
-  //   return originalPrice
-  // } else {
-  //   const vatPrice = originalPrice / 100
-  //   const num = vatPrice * vatRate
-  //   const total = parseFloat((originalPrice + num).toFixed(2))
-  //   return total
-  // }
+  if (vatRate === 0) {
+    return originalPrice
+  } else {
+    const vatPrice = originalPrice / 100
+    const num = vatPrice * vatRate
+    const total = parseFloat((originalPrice + num).toFixed(2))
+    return total
+  }
 }
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  // Add your code here!
-  // if (reduction === 0) {
-  //   return originalPrice
-  // } else {
-  //   const salePrice = originalPrice / 100
-  //   const num = salePrice * reduction
-  //   const total = parseFloat((originalPrice - num).toFixed(2))
-  //   return total
-  // }
+  if (reduction === 0) {
+    return originalPrice
+  } else {
+    const salePrice = originalPrice / 100
+    const num = salePrice * reduction
+    const total = parseFloat((originalPrice - num).toFixed(2))
+    return total
+  }
 }
 
 function getMiddleCharacter(str) {
+  let length = str.length
+  let middle = Math.floor(length / 2)
+  if (length % 2 === 0) {
+    return str[middle -1] + str[middle]
+  } else {
+    return str[middle]
+  }
 }
 
 function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
-  // Add your code here!
+  return word.split("").reverse().join("")
 }
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  // Add your code here!
+  return words.split("").reverse().join("")
 }
 
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-  // Add your code here!
-}
+  
+  }
+
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
