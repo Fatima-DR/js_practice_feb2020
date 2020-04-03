@@ -44,7 +44,7 @@ function getMiddleCharacter(str) {
   let length = str.length
   let middle = Math.floor(length / 2)
   if (length % 2 === 0) {
-    return str[middle -1] + str[middle]
+    return str[middle - 1] + str[middle]
   } else {
     return str[middle]
   }
@@ -57,23 +57,47 @@ function reverseWord(word) {
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  return words.split("").reverse().join("")
+  let result = words.map(item => item.split("").reverse().join("").replace(","));
+  return result
 }
 
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-  
+
+  let j = 0
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].type === "Linux") {
+      j++
+    }
   }
+  return j
+}
 
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
-  // Add your code here!
+  let total = 0
+  for (let i = 0; i < scores.length; i++) {
+    total += scores[i];
+  }
+  const mean = Math.round(total / scores.length * 100) / 100
+  return mean
 }
 
 function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
-  // Add your code here!
+  if (n % 3 === 0 && n % 5 === 0){
+    return "fizzbuzz"
+  }
+  else if (n % 3 === 0){
+    return "fizz"
+  }
+  else if (n % 5 === 0){
+    return "buzz"
+  }
+  else {
+    return n
+  }
 }
 
 module.exports = {
