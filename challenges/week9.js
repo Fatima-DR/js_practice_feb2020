@@ -65,8 +65,6 @@ const createMatrix = (n, fill) => {
   for (let i = 0; i < n; i++) {
     arr.push(fill)
     Array(n).fill(arr)
-
-
   }
   return Array(n).fill(arr)
 
