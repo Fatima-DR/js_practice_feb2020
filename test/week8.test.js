@@ -167,7 +167,6 @@ describe("getWordFrequencies", () => {
   });
 
   test("ignores punctuation", () => {
-    // Hint: Google "JavaScript remove special characters from string" to get some ideas!
     expect(
       getWordFrequencies("Hello, hello hello! What have we here?")
     ).toEqual({
